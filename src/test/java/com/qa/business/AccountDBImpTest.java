@@ -36,7 +36,7 @@ public class AccountDBImpTest {
 	
 	@Test
 	public void createAccountTest() {
-		String expectedValue="{\"message\": \"account has been created.\"}";
+		String expectedValue="{\"message\": \"Account has been created.\"}";
 		String actualValue= accImp.createAccount(MockAccount);
 		assertEquals(expectedValue,actualValue);
 	}
