@@ -30,14 +30,21 @@ public class AccountDBImpTest {
 	@Mock 
 	private JSONUtil jsonutil;
 	
-	private static final String MockAccount = "{\"firstName\":\"Ryan\",\"secondName\":\"Prince\",\"accountNumber\":\"1\"}";
-	private static final String MockAccountList = "[{\"firstName\":\"Ryan\",\"secondName\":\"Prince\",\"accountNumber\":\"1\"}]";
+	private static final String mockAccount = "{\"firstName\":\"Ryan\",\"secondName\":\"Prince\",\"accountNumber\":\"1\"}";
+	private static final String mockAccountList = "[{\"firstName\":\"Ryan\",\"secondName\":\"Prince\",\"accountNumber\":\"1\"}]";
 	
 	
 	@Test
 	public void createAccountTest() {
 		String expectedValue="{\"message\": \"Account has been created.\"}";
-		String actualValue= accImp.createAccount(MockAccount);
+		String actualValue= accImp.createAccount(mockAccount);
+		assertEquals(expectedValue,actualValue);
+	}
+	
+	@Test
+	public void deleteAccountTest() {
+		String expectedValue="{\"message\": \"Account has been deleted.\"}";
+		String actualValue=accImp.deleteAccount(mockAccount);
 		assertEquals(expectedValue,actualValue);
 	}
 
